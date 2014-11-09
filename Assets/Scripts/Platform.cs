@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class PlatformController : BaseBehavior
+public class Platform : BaseBehavior
 {
     private bool _activated = false;
     private Transform _player;

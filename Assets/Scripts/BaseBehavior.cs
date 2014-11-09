@@ -6,6 +6,10 @@ using UnityEngine;
 
 public class BaseBehavior : MonoBehaviour
 {
+    /// <summary>
+    /// Is the current transform off the bottom of the screen.
+    /// </summary>
+    /// <returns></returns>
     public bool IsBelowTheFold()
     {
         var halfHeight = Screen.height / 2;
@@ -15,5 +19,19 @@ public class BaseBehavior : MonoBehaviour
         var distance = Vector3.Distance(p1, p2);
 
         return (Camera.main.transform.position.y - distance > transform.position.y);
+    }
+
+    /// <summary>
+    /// The top of the screen in y world coordinates.
+    /// </summary>
+    public float TopOfTheScreen()
+    {
+        var halfHeight = Screen.height / 2;
+
+        var p1 = Camera.main.ScreenToWorldPoint(Vector3.zero);
+        var p2 = Camera.main.ScreenToWorldPoint(new Vector3(0, halfHeight, 0));
+        var distance = Vector3.Distance(p1, p2);
+
+        return Camera.main.transform.position.y + distance;
     }
 }
