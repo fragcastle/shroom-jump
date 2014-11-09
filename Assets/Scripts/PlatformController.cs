@@ -15,8 +15,11 @@ public class PlatformController : MonoBehaviour
 
     }
 
-    void OnCollisionEnter2D(Collision2D collision2d)
+    void OnTriggerEnter2D(Collider2D other)
     {
-        collision2d.rigidbody.AddForce(new Vector2(0, JumpForce));
+        Debug.Log("Trigger entered.");
+
+        if (other.rigidbody2D.velocity.y <= 0)
+            other.rigidbody2D.AddForce(new Vector2(0, JumpForce));
     }
 }
