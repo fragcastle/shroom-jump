@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class PlatformDirector : MonoBehaviour
+public class PlatformDirector : BaseBehavior
 {
     private GameObject _player;
 
@@ -10,7 +10,9 @@ public class PlatformDirector : MonoBehaviour
 
     public Transform Platform;
 
-    public float PlatformRange = 0.5F;
+    public float PlatformRangeMin = 0.2F;
+    public float PlatformRange = 0.3F;
+
     public float PlatformStartingFrequency = 0.5F;
     public float PlatformFrequencyDrop = 0.5F;
 
@@ -23,11 +25,26 @@ public class PlatformDirector : MonoBehaviour
     {
         var playerPosition = _player.transform.position;
 
+        // Generate the first platform in the center of screen
+        if (_lastHeight == 0)
+        {
+            var platform = (Transform)Instantiate(Platform, new Vector3(transform.position.x, _lastHeight, transform.position.z), Quaternion.identity);
+
+            platform.parent = transform;
+
+            _lastHeight += PlatformRangeMin;
+        }
+
         while (_lastHeight < playerPosition.y + _distanceToGenerate)
         {
-            _lastHeight += 0.2F;
+            _lastHeight += PlatformRangeMin + (PlatformRange * Random.value);
 
-            Instantiate(Platform, new Vector3(transform.position.x, _lastHeight, transform.position.z), Quaternion.identity);
+            var screenWidth = ScreenWidth();
+            var xPosition = (screenWidth * Random.value) - (screenWidth / 2);
+
+            var platform = (Transform)Instantiate(Platform, new Vector3(xPosition, _lastHeight, transform.position.z), Quaternion.identity);
+
+            platform.parent = transform;
         }
     }
 }

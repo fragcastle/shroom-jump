@@ -22,6 +22,19 @@ public class BaseBehavior : MonoBehaviour
     }
 
     /// <summary>
+    /// Width of the screen in world units.
+    /// </summary>
+    /// <returns></returns>
+    public float ScreenWidth()
+    {
+        var p1 = Camera.main.ScreenToWorldPoint(Vector3.zero);
+        var p2 = Camera.main.ScreenToWorldPoint(new Vector3(0, Screen.width, 0));
+        var distance = Vector3.Distance(p1, p2);
+
+        return distance;
+    }
+
+    /// <summary>
     /// The top of the screen in y world coordinates.
     /// </summary>
     public float TopOfTheScreen()
@@ -33,5 +46,27 @@ public class BaseBehavior : MonoBehaviour
         var distance = Vector3.Distance(p1, p2);
 
         return Camera.main.transform.position.y + distance;
+    }
+
+    public float LeftOfScreenX()
+    {
+        var halfWidth = Screen.width / 2;
+
+        var p1 = Camera.main.ScreenToWorldPoint(Vector3.zero);
+        var p2 = Camera.main.ScreenToWorldPoint(new Vector3(-halfWidth, 0, 0));
+        var distance = Vector3.Distance(p1, p2);
+
+        return distance;
+    }
+
+    public float RightOfScreenX()
+    {
+        var halfWidth = Screen.width / 2;
+
+        var p1 = Camera.main.ScreenToWorldPoint(Vector3.zero);
+        var p2 = Camera.main.ScreenToWorldPoint(new Vector3(halfWidth, 0, 0));
+        var distance = Vector3.Distance(p1, p2);
+
+        return distance;
     }
 }
