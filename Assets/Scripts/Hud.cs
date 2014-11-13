@@ -5,12 +5,16 @@ public class Hud : MonoBehaviour
 {
 	private float _distanceTraveled = 0;
 	private Transform _player;
+	private GUIStyle _textStyle = new GUIStyle();
 
 	public float DistanceScale = 100;
 
 	void Start ()
 	{
 		_player = GameObject.Find ("Player").transform;
+
+		_textStyle.normal.textColor = Color.black;
+		_textStyle.fontSize = 24;
 	}
 
 	void Update ()
@@ -21,6 +25,6 @@ public class Hud : MonoBehaviour
 
 	void OnGUI ()
 	{
-		GUI.Label (new Rect (10, 10, 100, 20), _distanceTraveled.ToString ());
+		GUI.Label(new Rect (10, 10, 100, 20), _distanceTraveled.ToString(), _textStyle);
 	}
 }

@@ -5,6 +5,8 @@ public class Platform : BaseBehavior
 {
     private bool _activated = false;
     private Transform _player;
+
+	public bool IsBroken = false;
     public float JumpSpeed = 3.5F;
 
     void Start()
@@ -28,12 +30,32 @@ public class Platform : BaseBehavior
         if (IsBelowTheFold())
         {
             Destroy(gameObject);
-        }
-    }
+		}
+	}
 
-    void OnCollisionEnter2D(Collision2D collision2D)
-    {
-        if (collision2D.rigidbody.velocity.y <= 0)
-            collision2D.rigidbody.velocity = new Vector2(collision2D.rigidbody.velocity.x, JumpSpeed);
-    }
+	void OnCollisionEnter2D(Collision2D collision2D)
+	{
+		if (collision2D.rigidbody.velocity.y <= 0)
+		{
+			collision2D.rigidbody.velocity = new Vector2(collision2D.rigidbody.velocity.x, JumpSpeed);
+
+			if (IsBroken)
+			{
+				Destroy(gameObject);
+			}
+		}
+	}
+
+	void OnCollisionStay2D(Collision2D collision2D)
+	{
+		if (collision2D.rigidbody.velocity.y <= 0)
+		{
+			collision2D.rigidbody.velocity = new Vector2(collision2D.rigidbody.velocity.x, JumpSpeed);
+
+			if (IsBroken)
+			{
+				Destroy(gameObject);
+			}
+		}
+	}
 }

@@ -6,6 +6,8 @@ TextureImporter:
     21300002: platforms_1
     21300004: platforms_2
     21300006: platforms_3
+    21300008: platforms_4
+    21300010: platforms_5
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -25,7 +27,7 @@ TextureImporter:
   grayScaleToAlpha: 0
   generateCubemap: 0
   seamlessCubemap: 0
-  textureFormat: -1
+  textureFormat: -3
   maxTextureSize: 1024
   textureSettings:
     filterMode: 0
@@ -53,9 +55,9 @@ TextureImporter:
         x: 0
         y: 0
         width: 16
-        height: 16
+        height: 3
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: platforms_1
       rect:
@@ -63,9 +65,9 @@ TextureImporter:
         x: 16
         y: 0
         width: 16
-        height: 16
+        height: 3
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: platforms_2
       rect:
@@ -73,9 +75,9 @@ TextureImporter:
         x: 32
         y: 0
         width: 16
-        height: 16
+        height: 5
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: platforms_3
       rect:
@@ -83,9 +85,29 @@ TextureImporter:
         x: 48
         y: 0
         width: 16
-        height: 16
+        height: 3
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: platforms_4
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 16
+        height: 3
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: platforms_5
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 0
+        width: 16
+        height: 3
+      alignment: 0
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 
