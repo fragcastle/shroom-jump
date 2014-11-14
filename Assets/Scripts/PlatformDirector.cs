@@ -22,6 +22,9 @@ public class PlatformDirector : BaseBehavior
 
     void Update()
     {
+        if (!_player)
+            return;
+
         var playerPosition = _player.transform.position;
 
         // Generate the first platform in the center of screen

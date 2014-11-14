@@ -19,6 +19,9 @@ public class Hud : MonoBehaviour
 
 	void Update ()
 	{
+        if (!_player)
+            return;
+
 		if (_player.position.y * DistanceScale > _distanceTraveled)
 			_distanceTraveled = (int)(_player.position.y * DistanceScale);
 	}
