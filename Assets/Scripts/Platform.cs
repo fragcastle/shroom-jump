@@ -3,7 +3,6 @@ using System.Collections;
 
 public class Platform : BaseBehavior
 {
-    private bool _activated = false;
     private Transform _player;
 
     public bool IsBroken = false;
@@ -16,15 +15,16 @@ public class Platform : BaseBehavior
 
     void Update()
     {
-        if (!_activated && _player.position.y > transform.position.y)
+        if (!_player)
+            return;
+
+        if (!collider2D.enabled && _player.position.y > transform.position.y && _player.rigidbody2D.velocity.y <= 0)
         {
-            var collider = GetComponent<BoxCollider2D>();
-            collider.enabled = true;
+            collider2D.enabled = true;
         }
-        else if (_activated && _player.position.y < transform.position.y)
+        else if (collider2D.enabled && _player.position.y < transform.position.y)
         {
-            var collider = GetComponent<BoxCollider2D>();
-            collider.enabled = false;
+            collider2D.enabled = false;
         }
 
         if (IsBelowTheFold())
@@ -39,6 +39,8 @@ public class Platform : BaseBehavior
         {
             collision2D.rigidbody.velocity = new Vector2(collision2D.rigidbody.velocity.x, JumpSpeed);
 
+            collider2D.enabled = false;
+
             if (IsBroken)
             {
                 Destroy(gameObject);
@@ -51,6 +53,8 @@ public class Platform : BaseBehavior
         if (collision2D.rigidbody.velocity.y <= 0)
         {
             collision2D.rigidbody.velocity = new Vector2(collision2D.rigidbody.velocity.x, JumpSpeed);
+
+            collider2D.enabled = false;
 
             if (IsBroken)
             {

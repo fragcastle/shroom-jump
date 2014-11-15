@@ -14,15 +14,6 @@ public class PlayerController : BaseBehavior
 
     void Update()
     {
-        if (Input.GetKey(KeyCode.LeftArrow))
-        {
-            rigidbody2D.AddForce(new Vector2(-MoveForce * Time.deltaTime * 10, 0));
-        }
-        else if (Input.GetKey(KeyCode.RightArrow))
-        {
-            rigidbody2D.AddForce(new Vector2(MoveForce * Time.deltaTime * 10, 0));
-        }
-
         if (Mathf.Abs(rigidbody2D.velocity.y) < 1)
         {
             _animator.SetTrigger("Hovering");
@@ -36,9 +27,21 @@ public class PlayerController : BaseBehavior
             _animator.SetTrigger("Jumping");
         }
 
-        if (IsBelowTheFold())
+        if (IsBelowTheFold(1))
         {
             Destroy(gameObject);
+        }
+    }
+
+    void FixedUpdate()
+    {
+        if (Input.GetKey(KeyCode.LeftArrow))
+        {
+            rigidbody2D.AddForce(new Vector2(-MoveForce * Time.deltaTime * 10, 0));
+        }
+        else if (Input.GetKey(KeyCode.RightArrow))
+        {
+            rigidbody2D.AddForce(new Vector2(MoveForce * Time.deltaTime * 10, 0));
         }
     }
 }

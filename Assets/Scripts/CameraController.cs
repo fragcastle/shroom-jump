@@ -12,6 +12,9 @@ public class CameraController : MonoBehaviour
 
     void Update()
     {
+        if (!_player)
+            return;
+
         var playerPosition = _player.transform.position;
 
         if (playerPosition.y >= transform.position.y)

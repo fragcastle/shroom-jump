@@ -22,6 +22,21 @@ public class BaseBehavior : MonoBehaviour
     }
 
     /// <summary>
+    /// Is the current transform off the bottom of the screen.
+    /// </summary>
+    /// <returns></returns>
+    public bool IsBelowTheFold(float buffer)
+    {
+        var halfHeight = Screen.height / 2;
+
+        var p1 = Camera.main.ScreenToWorldPoint(Vector3.zero);
+        var p2 = Camera.main.ScreenToWorldPoint(new Vector3(0, halfHeight, 0));
+        var distance = Vector3.Distance(p1, p2);
+
+        return (Camera.main.transform.position.y - distance > transform.position.y + buffer);
+    }
+
+    /// <summary>
     /// Width of the screen in world units.
     /// </summary>
     /// <returns></returns>
