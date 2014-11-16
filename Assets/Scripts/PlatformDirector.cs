@@ -6,7 +6,7 @@ public class PlatformDirector : BaseBehavior
     private GameObject _player;
 
     private float _lastHeight = 0;
-    private float _distanceToGenerate = 2;
+    private float _distanceToGenerate = 5;
 
     public Transform Platform;
 
@@ -50,7 +50,10 @@ public class PlatformDirector : BaseBehavior
 
             if (Random.value < ChanceForBrokenPlatform)
             {
-                platform.gameObject.GetComponent<Platform>().IsBroken = true;
+				var platformComponent = platform.GetComponent<Platform>();
+
+				if (platformComponent)
+                	platform.GetComponent<Platform>().IsBroken = true;
             }
         }
     }

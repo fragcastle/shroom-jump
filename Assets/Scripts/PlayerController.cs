@@ -13,7 +13,12 @@ public class PlayerController : BaseBehavior
     }
 
     void Update()
-    {
+	{
+		if (IsBelowTheFold(1))
+		{
+			Destroy(gameObject);
+		}
+
         if (Mathf.Abs(rigidbody2D.velocity.y) < 1)
         {
             _animator.SetTrigger("Hovering");
@@ -26,11 +31,15 @@ public class PlayerController : BaseBehavior
         {
             _animator.SetTrigger("Jumping");
         }
-
-        if (IsBelowTheFold(1))
-        {
-            Destroy(gameObject);
-        }
+		
+		if (Input.GetKey(KeyCode.LeftArrow))
+		{
+			transform.localScale = new Vector3(-1, 1, 1);
+		}
+		else if (Input.GetKey(KeyCode.RightArrow))
+		{
+			transform.localScale = new Vector3(1, 1, 1);
+		}
     }
 
     void FixedUpdate()

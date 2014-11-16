@@ -1,0 +1,553 @@
+fileFormatVersion: 2
+guid: 58e59f8a2a53543b3a4eadfc42da6a49
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: mushrooms_0
+    21300002: mushrooms_1
+    21300004: mushrooms_2
+    21300006: mushrooms_3
+    21300008: mushrooms_4
+    21300010: mushrooms_5
+    21300012: mushrooms_6
+    21300014: mushrooms_7
+    21300016: mushrooms_8
+    21300018: mushrooms_9
+    21300020: mushrooms_10
+    21300022: mushrooms_11
+    21300024: mushrooms_12
+    21300026: mushrooms_13
+    21300028: mushrooms_14
+    21300030: mushrooms_15
+    21300032: mushrooms_16
+    21300034: mushrooms_17
+    21300036: mushrooms_18
+    21300038: mushrooms_19
+    21300040: mushrooms_20
+    21300042: mushrooms_21
+    21300044: mushrooms_22
+    21300046: mushrooms_23
+    21300048: mushrooms_24
+    21300050: mushrooms_25
+    21300052: mushrooms_26
+    21300054: mushrooms_27
+    21300056: mushrooms_28
+    21300058: mushrooms_29
+    21300060: mushrooms_30
+    21300062: mushrooms_31
+    21300064: mushrooms_32
+    21300066: mushrooms_33
+    21300068: mushrooms_34
+    21300070: mushrooms_35
+    21300072: mushrooms_36
+    21300074: mushrooms_37
+    21300076: mushrooms_38
+    21300078: mushrooms_39
+    21300080: mushrooms_40
+    21300082: mushrooms_41
+    21300084: mushrooms_42
+    21300086: mushrooms_43
+    21300088: mushrooms_44
+    21300090: mushrooms_45
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -3
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: 0
+    aniso: 1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: mushrooms_0
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 442
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mushrooms_1
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 472
+        width: 70
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mushrooms_2
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 472
+        width: 70
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mushrooms_3
+      rect:
+        serializedVersion: 2
+        x: 284
+        y: 472
+        width: 70
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mushrooms_4
+      rect:
+        serializedVersion: 2
+        x: 355
+        y: 472
+        width: 70
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mushrooms_5
+      rect:
+        serializedVersion: 2
+        x: 426
+        y: 472
+        width: 70
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mushrooms_6
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 442
+        width: 39
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mushrooms_7
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 371
+        width: 53
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mushrooms_8
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 401
+        width: 70
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mushrooms_9
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 401
+        width: 70
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mushrooms_10
+      rect:
+        serializedVersion: 2
+        x: 284
+        y: 401
+        width: 70
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mushrooms_11
+      rect:
+        serializedVersion: 2
+        x: 355
+        y: 401
+        width: 70
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mushrooms_12
+      rect:
+        serializedVersion: 2
+        x: 426
+        y: 401
+        width: 70
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mushrooms_13
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 371
+        width: 39
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mushrooms_14
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 300
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mushrooms_15
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 330
+        width: 70
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mushrooms_16
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 330
+        width: 70
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mushrooms_17
+      rect:
+        serializedVersion: 2
+        x: 284
+        y: 330
+        width: 70
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mushrooms_18
+      rect:
+        serializedVersion: 2
+        x: 355
+        y: 330
+        width: 70
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mushrooms_19
+      rect:
+        serializedVersion: 2
+        x: 426
+        y: 330
+        width: 70
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mushrooms_20
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 300
+        width: 39
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mushrooms_21
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 229
+        width: 44
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mushrooms_22
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 229
+        width: 47
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mushrooms_23
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 259
+        width: 70
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mushrooms_24
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 259
+        width: 70
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mushrooms_25
+      rect:
+        serializedVersion: 2
+        x: 284
+        y: 259
+        width: 70
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mushrooms_26
+      rect:
+        serializedVersion: 2
+        x: 355
+        y: 259
+        width: 70
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mushrooms_27
+      rect:
+        serializedVersion: 2
+        x: 426
+        y: 259
+        width: 70
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mushrooms_28
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 158
+        width: 44
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mushrooms_29
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 158
+        width: 57
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mushrooms_30
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 188
+        width: 70
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mushrooms_31
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 188
+        width: 70
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mushrooms_32
+      rect:
+        serializedVersion: 2
+        x: 284
+        y: 188
+        width: 70
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mushrooms_33
+      rect:
+        serializedVersion: 2
+        x: 355
+        y: 188
+        width: 70
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mushrooms_34
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 87
+        width: 44
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mushrooms_35
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 87
+        width: 49
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mushrooms_36
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 117
+        width: 70
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mushrooms_37
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 117
+        width: 70
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mushrooms_38
+      rect:
+        serializedVersion: 2
+        x: 284
+        y: 117
+        width: 70
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mushrooms_39
+      rect:
+        serializedVersion: 2
+        x: 355
+        y: 117
+        width: 70
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mushrooms_40
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 16
+        width: 40
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mushrooms_41
+      rect:
+        serializedVersion: 2
+        x: 91
+        y: 16
+        width: 31
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mushrooms_42
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 46
+        width: 70
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mushrooms_43
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 46
+        width: 70
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mushrooms_44
+      rect:
+        serializedVersion: 2
+        x: 284
+        y: 46
+        width: 70
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mushrooms_45
+      rect:
+        serializedVersion: 2
+        x: 355
+        y: 46
+        width: 70
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
