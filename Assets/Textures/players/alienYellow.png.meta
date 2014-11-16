@@ -1,7 +1,18 @@
 fileFormatVersion: 2
 guid: 896e122d888f4400db5b8ae207bb6b96
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: alienYellow_0
+    21300002: alienYellow_1
+    21300004: alienYellow_2
+    21300006: alienYellow_3
+    21300008: alienYellow_4
+    21300010: alienYellow_5
+    21300012: alienYellow_6
+    21300014: alienYellow_7
+    21300016: alienYellow_8
+    21300018: alienYellow_9
+    21300020: alienYellow_10
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -24,10 +35,10 @@ TextureImporter:
   textureFormat: -3
   maxTextureSize: 1024
   textureSettings:
-    filterMode: 0
-    aniso: -1
+    filterMode: 2
+    aniso: 1
     mipBias: -1
-    wrapMode: -1
+    wrapMode: 1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
@@ -42,6 +53,116 @@ TextureImporter:
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: alienYellow_0
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 430
+        width: 66
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: alienYellow_1
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 257
+        width: 66
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: alienYellow_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 8
+        width: 68
+        height: 82
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: alienYellow_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 426
+        width: 69
+        height: 86
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: alienYellow_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 339
+        width: 69
+        height: 87
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: alienYellow_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 254
+        width: 69
+        height: 85
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: alienYellow_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 173
+        width: 68
+        height: 81
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: alienYellow_7
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 175
+        width: 67
+        height: 82
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: alienYellow_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 90
+        width: 67
+        height: 83
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: alienYellow_9
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 90
+        width: 68
+        height: 84
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: alienYellow_10
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 8
+        width: 66
+        height: 82
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 
