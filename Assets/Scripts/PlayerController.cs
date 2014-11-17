@@ -55,7 +55,7 @@ public class PlayerController : BaseBehavior
 
 		var screenWidth = ScreenWidth();
 		var xRight = screenWidth / 2;
-		var xLeft = -screenWidth;
+		var xLeft = -xRight;
 
 		if (transform.position.x > xRight)
 		{

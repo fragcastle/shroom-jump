@@ -3,6 +3,8 @@ using System.Collections;
 
 public class DieWhenBelowTheFold : BaseBehavior
 {
+	public float Buffer = 0;
+
 	void Start ()
 	{
 	
@@ -10,7 +12,7 @@ public class DieWhenBelowTheFold : BaseBehavior
 	
 	void Update ()
 	{
-		if (IsBelowTheFold())
+		if (IsBelowTheFold(Buffer))
 		{
 			Destroy(gameObject);
 		}
