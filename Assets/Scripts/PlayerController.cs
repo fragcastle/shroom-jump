@@ -52,5 +52,18 @@ public class PlayerController : BaseBehavior
         {
             rigidbody2D.AddForce(new Vector2(MoveForce * Time.deltaTime * 10, 0));
         }
+
+		var screenWidth = ScreenWidth();
+		var xRight = screenWidth / 2;
+		var xLeft = -screenWidth;
+
+		if (transform.position.x > xRight)
+		{
+			transform.position = new Vector3(xLeft, transform.position.y, transform.position.z);
+		}
+		else if (transform.position.x < xLeft)
+		{
+			transform.position = new Vector3(xRight, transform.position.y, transform.position.z);
+		}
     }
 }
