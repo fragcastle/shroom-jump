@@ -1,13 +1,16 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Hud : MonoBehaviour
+public class Hud : BaseBehavior
 {
     private float _distanceTraveled = 0;
-    private Transform _player;
-    private GUIStyle _textStyle = new GUIStyle();
+	private Transform _player;
+	private GUIStyle _textStyle = new GUIStyle();
+	private GUIStyle _buttonStyle = new GUIStyle();
 
     public float DistanceScale = 100;
+
+	public Texture2D PauseButtonImage;
 
     void Start()
     {
@@ -44,6 +47,13 @@ public class Hud : MonoBehaviour
 			
 			_textStyle.alignment = TextAnchor.MiddleCenter;
 			GUI.Label(new Rect(cameraPosition.x, cameraPosition.y, 20, 20), "Press space to play again", _textStyle);
+		}
+
+		_buttonStyle = GUI.skin.label;
+
+		if (GUI.Button(new Rect(Screen.width - 42, 10, 32, 32), PauseButtonImage, _buttonStyle))
+		{
+			Time.timeScale = Time.timeScale == 1 ? 0 : 1;
 		}
     }
 }
