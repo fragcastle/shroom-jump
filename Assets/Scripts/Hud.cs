@@ -20,14 +20,30 @@ public class Hud : MonoBehaviour
     void Update()
     {
         if (!_player)
-            return;
+		{
+			if (Input.GetKeyDown(KeyCode.Space))
+			{
+				Application.LoadLevel("level-01");
+			}
+
+			return;
+		}
 
         if (_player.position.y * DistanceScale > _distanceTraveled)
             _distanceTraveled = (int)(_player.position.y * DistanceScale);
     }
 
     void OnGUI()
-    {
+	{
+		_textStyle.alignment = TextAnchor.MiddleLeft;
         GUI.Label(new Rect(10, 10, 100, 20), _distanceTraveled.ToString(), _textStyle);
+
+		if (!_player)
+		{
+			var cameraPosition = Camera.main.WorldToScreenPoint(Camera.main.transform.position);
+			
+			_textStyle.alignment = TextAnchor.MiddleCenter;
+			GUI.Label(new Rect(cameraPosition.x, cameraPosition.y, 100, 20), "Press space to play again", _textStyle);
+		}
     }
 }
