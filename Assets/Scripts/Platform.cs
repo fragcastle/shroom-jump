@@ -41,6 +41,8 @@ public class Platform : BaseBehavior
 
             collider2D.enabled = false;
 
+			PlatformDirector.Current.audio.Play();
+
             if (IsBroken)
             {
                 Destroy(gameObject);
@@ -55,6 +57,8 @@ public class Platform : BaseBehavior
             collision2D.rigidbody.velocity = new Vector2(collision2D.rigidbody.velocity.x, JumpSpeed);
 
             collider2D.enabled = false;
+			
+			PlatformDirector.Current.audio.Play();
 
             if (IsBroken)
             {

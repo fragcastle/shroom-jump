@@ -15,9 +15,14 @@ public class PlatformDirector : BaseBehavior
 
     public float ChanceForBrokenPlatform = 0.1F;
 
+	public AudioSource JumpSound;
+
+	public static PlatformDirector Current;
+
     void Start()
     {
         _player = GameObject.Find("Player");
+		Current = this;
     }
 
     void Update()
@@ -53,7 +58,9 @@ public class PlatformDirector : BaseBehavior
 				var platformComponent = platform.GetComponent<Platform>();
 
 				if (platformComponent)
+				{
                 	platform.GetComponent<Platform>().IsBroken = true;
+				}
             }
         }
     }
