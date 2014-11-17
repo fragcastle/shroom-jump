@@ -43,7 +43,7 @@ public class Hud : MonoBehaviour
 			var cameraPosition = Camera.main.WorldToScreenPoint(Camera.main.transform.position);
 			
 			_textStyle.alignment = TextAnchor.MiddleCenter;
-			GUI.Label(new Rect(cameraPosition.x, cameraPosition.y, 100, 20), "Press space to play again", _textStyle);
+			GUI.Label(new Rect(cameraPosition.x, cameraPosition.y, 20, 20), "Press space to play again", _textStyle);
 		}
     }
 }
