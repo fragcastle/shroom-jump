@@ -41,7 +41,8 @@ public class Platform : BaseBehavior
 
             collider2D.enabled = false;
 
-			PlatformDirector.Current.audio.Play();
+			if (PlatformDirector.Current)
+				PlatformDirector.Current.audio.Play();
 
             if (IsBroken)
             {

@@ -84,4 +84,11 @@ public class BaseBehavior : MonoBehaviour
 
         return distance;
     }
+
+	public bool IsMobile()
+	{
+		return Application.platform == RuntimePlatform.Android
+			|| Application.platform == RuntimePlatform.IPhonePlayer
+			|| Application.platform == RuntimePlatform.WP8Player;
+	}
 }

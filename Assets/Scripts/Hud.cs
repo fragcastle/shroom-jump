@@ -8,6 +8,8 @@ public class Hud : BaseBehavior
 	private GUIStyle _textStyle = new GUIStyle();
 	private GUIStyle _buttonStyle = new GUIStyle();
 
+	private string _playAgainText = "";
+
     public float DistanceScale = 100;
 
 	public Texture2D PauseButtonImage;
@@ -18,13 +20,15 @@ public class Hud : BaseBehavior
 
         _textStyle.normal.textColor = Color.black;
         _textStyle.fontSize = 24;
+
+		_playAgainText = IsMobile() ? "Tap to play again" : "Press space to play again";
     }
 
     void Update()
     {
         if (!_player)
 		{
-			if (Input.GetKeyDown(KeyCode.Space))
+			if (Input.GetKeyDown(KeyCode.Space)|| (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began))
 			{
 				Application.LoadLevel("level-01");
 			}
@@ -46,7 +50,7 @@ public class Hud : BaseBehavior
 			var cameraPosition = Camera.main.WorldToScreenPoint(Camera.main.transform.position);
 			
 			_textStyle.alignment = TextAnchor.MiddleCenter;
-			GUI.Label(new Rect(cameraPosition.x, cameraPosition.y, 20, 20), "Press space to play again", _textStyle);
+			GUI.Label(new Rect(cameraPosition.x, cameraPosition.y, 20, 20), _playAgainText, _textStyle);
 		}
 
 		_buttonStyle = GUI.skin.label;
