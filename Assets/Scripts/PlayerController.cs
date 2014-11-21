@@ -47,28 +47,19 @@ public class PlayerController : BaseBehavior
 
     void FixedUpdate()
     {
-        var iPx = Input.acceleration.x;
+        if (IsMobile())
+        {
+            var iPx = Input.acceleration.x;
 
-        if (Input.GetKey(KeyCode.LeftArrow) || iPx < -_moveThreshold)
-        {
-            if (IsMobile())
-            {
-                rigidbody2D.AddForce(new Vector2(MoveForce * Time.deltaTime * 20 * iPx, 0));
-            }
-            else
-            {
-                rigidbody2D.AddForce(new Vector2(-MoveForce * Time.deltaTime * 10, 0));
-            }
+            rigidbody2D.AddForce(new Vector2(MoveForce * Time.deltaTime * 20 * iPx, 0));
         }
-        else if (Input.GetKey(KeyCode.RightArrow) || iPx > _moveThreshold)
+        else
         {
-            if (IsMobile())
+            var xInput = Input.GetAxis("Horizontal");
+
+            if (xInput != 0)
             {
-                rigidbody2D.AddForce(new Vector2(MoveForce * Time.deltaTime * 20 * iPx, 0));
-            }
-            else
-            {
-                rigidbody2D.AddForce(new Vector2(MoveForce * Time.deltaTime * 10, 0));
+                rigidbody2D.AddForce(new Vector2(xInput * MoveForce * Time.deltaTime * 10, 0));
             }
         }
 
