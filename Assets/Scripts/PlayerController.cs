@@ -4,7 +4,7 @@ using System.Collections;
 public class PlayerController : BaseBehavior
 {
     private Animator _animator;
-	private float _moveThreshold = 0F;
+    private float _moveThreshold = 0F;
 
     public int MoveForce = 10;
 
@@ -14,11 +14,11 @@ public class PlayerController : BaseBehavior
     }
 
     void Update()
-	{
-		if (IsBelowTheFold(1))
-		{
-			Destroy(gameObject);
-		}
+    {
+        if (IsBelowTheFold(1))
+        {
+            Destroy(gameObject);
+        }
 
         if (Mathf.Abs(rigidbody2D.velocity.y) < 1)
         {
@@ -33,55 +33,56 @@ public class PlayerController : BaseBehavior
             _animator.SetTrigger("Jumping");
         }
 
-		var iPx = Input.acceleration.x;
+        var iPx = Input.acceleration.x;
 
-		if (Input.GetKey(KeyCode.LeftArrow) || iPx < -_moveThreshold)
-		{
-			transform.localScale = new Vector3(-1, 1, 1);
-		}
-		else if (Input.GetKey(KeyCode.RightArrow) || iPx > _moveThreshold)
-		{
-			transform.localScale = new Vector3(1, 1, 1);
-		}
+        if (Input.GetKey(KeyCode.LeftArrow) || iPx < -_moveThreshold)
+        {
+            transform.localScale = new Vector3(-1, 1, 1);
+        }
+        else if (Input.GetKey(KeyCode.RightArrow) || iPx > _moveThreshold)
+        {
+            transform.localScale = new Vector3(1, 1, 1);
+        }
     }
 
     void FixedUpdate()
-	{
-		var iPx = Input.acceleration.x;
+    {
+        var iPx = Input.acceleration.x;
 
-		if (Input.GetKey(KeyCode.LeftArrow) || iPx < -_moveThreshold)
-		{if (IsMobile())
-			{
-				rigidbody2D.AddForce(new Vector2(MoveForce * Time.deltaTime * 20 * iPx, 0));
-			}
-			else
-			{
-            	rigidbody2D.AddForce(new Vector2(-MoveForce * Time.deltaTime * 10, 0));
-			}
-        }
-		else if (Input.GetKey(KeyCode.RightArrow) || iPx > _moveThreshold)
+        if (Input.GetKey(KeyCode.LeftArrow) || iPx < -_moveThreshold)
         {
-			if (IsMobile())
-			{
-				rigidbody2D.AddForce(new Vector2(MoveForce * Time.deltaTime * 20 * iPx, 0));
-			}
-			else
-			{
-            	rigidbody2D.AddForce(new Vector2(MoveForce * Time.deltaTime * 10, 0));
-			}
+            if (IsMobile())
+            {
+                rigidbody2D.AddForce(new Vector2(MoveForce * Time.deltaTime * 20 * iPx, 0));
+            }
+            else
+            {
+                rigidbody2D.AddForce(new Vector2(-MoveForce * Time.deltaTime * 10, 0));
+            }
+        }
+        else if (Input.GetKey(KeyCode.RightArrow) || iPx > _moveThreshold)
+        {
+            if (IsMobile())
+            {
+                rigidbody2D.AddForce(new Vector2(MoveForce * Time.deltaTime * 20 * iPx, 0));
+            }
+            else
+            {
+                rigidbody2D.AddForce(new Vector2(MoveForce * Time.deltaTime * 10, 0));
+            }
         }
 
-		var screenWidth = ScreenWidth();
-		var xRight = screenWidth / 2;
-		var xLeft = -xRight;
+        var screenWidth = ScreenWidth();
+        var xRight = screenWidth / 2;
+        var xLeft = -xRight;
 
-		if (transform.position.x > xRight)
-		{
-			transform.position = new Vector3(xLeft, transform.position.y, transform.position.z);
-		}
-		else if (transform.position.x < xLeft)
-		{
-			transform.position = new Vector3(xRight, transform.position.y, transform.position.z);
-		}
+        if (transform.position.x > xRight)
+        {
+            transform.position = new Vector3(xLeft, transform.position.y, transform.position.z);
+        }
+        else if (transform.position.x < xLeft)
+        {
+            transform.position = new Vector3(xRight, transform.position.y, transform.position.z);
+        }
     }
 }
