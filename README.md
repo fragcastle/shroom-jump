@@ -1,5 +1,4 @@
 Frag Jump
-
 =========
 
 An open source jumping game clone
