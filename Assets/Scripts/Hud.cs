@@ -3,20 +3,18 @@ using System.Collections;
 
 public class Hud : BaseBehavior
 {
-    private float _distanceTraveled = 0;
-	private Transform _player;
+	private PlayerController _player;
 	private GUIStyle _textStyle = new GUIStyle();
 	private GUIStyle _buttonStyle = new GUIStyle();
 
 	private string _playAgainText = "";
-
-    public float DistanceScale = 100;
+	private string _newHighScoreText = "New High Score!";
 
 	public Texture2D PauseButtonImage;
 
     void Start()
     {
-        _player = GameObject.Find("Player").transform;
+        _player = GameObject.Find("Player").GetComponent<PlayerController>();
 
         _textStyle.normal.textColor = Color.black;
         _textStyle.fontSize = 24;
@@ -35,15 +33,12 @@ public class Hud : BaseBehavior
 
 			return;
 		}
-
-        if (_player.position.y * DistanceScale > _distanceTraveled)
-            _distanceTraveled = (int)(_player.position.y * DistanceScale);
     }
 
     void OnGUI()
 	{
 		_textStyle.alignment = TextAnchor.MiddleLeft;
-        GUI.Label(new Rect(10, 10, 100, 20), _distanceTraveled.ToString(), _textStyle);
+		GUI.Label(new Rect(10, 10, 100, 20), _player.DistanceTraveled.ToString(), _textStyle);
 
 		if (!_player)
 		{
@@ -51,6 +46,15 @@ public class Hud : BaseBehavior
 			
 			_textStyle.alignment = TextAnchor.MiddleCenter;
 			GUI.Label(new Rect(cameraPosition.x, cameraPosition.y, 20, 20), _playAgainText, _textStyle);
+
+			if (PlayerPrefs.HasKey(Constants.PreviousHighScoreKey) && PlayerPrefs.HasKey(Constants.HighScoreKey))
+			{
+				var oldScore = PlayerPrefs.GetInt(Constants.PreviousHighScoreKey);
+				var score = PlayerPrefs.GetInt(Constants.HighScoreKey);
+
+				if (score > oldScore)
+					GUI.Label(new Rect(cameraPosition.x, cameraPosition.y + 20, 20, 20), _newHighScoreText.ToString(), _textStyle);
+			}
 		}
 
 		_buttonStyle = GUI.skin.label;

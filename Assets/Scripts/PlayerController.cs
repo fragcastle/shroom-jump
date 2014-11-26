@@ -5,7 +5,9 @@ public class PlayerController : BaseBehavior
 {
     private Animator _animator;
     private float _moveThreshold = 0F;
-
+	
+	public float DistanceScale = 100;
+	public int DistanceTraveled = 0;
     public int MoveForce = 10;
 
     void Start()
@@ -14,9 +16,14 @@ public class PlayerController : BaseBehavior
     }
 
     void Update()
-    {
+	{
+		if (transform.position.y * DistanceScale > DistanceTraveled)
+			DistanceTraveled = (int)(transform.position.y * DistanceScale);
+
         if (IsBelowTheFold(1))
         {
+			AddHighScore(DistanceTraveled);
+
             Destroy(gameObject);
         }
 
@@ -76,4 +83,21 @@ public class PlayerController : BaseBehavior
             transform.position = new Vector3(xRight, transform.position.y, transform.position.z);
         }
     }
+
+	private void AddHighScore(int score)
+	{
+		if (PlayerPrefs.HasKey(Constants.HighScoreKey))
+		{
+			var oldScore = PlayerPrefs.GetInt(Constants.HighScoreKey);
+			
+			PlayerPrefs.SetInt(Constants.PreviousHighScoreKey, oldScore);
+
+			if (oldScore > score)
+			{
+				score = oldScore;
+			}
+		}
+		
+		PlayerPrefs.SetInt(Constants.HighScoreKey, score);
+	}
 }
