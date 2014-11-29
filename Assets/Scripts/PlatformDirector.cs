@@ -7,13 +7,16 @@ public class PlatformDirector : BaseBehavior
 
     private float _lastHeight = 0;
     private float _distanceToGenerate = 5;
-
-    public Transform Platform;
+	
+	public Transform Platform;
+	public Transform BrokenPlatform;
+	public Transform BouncyPlatform;
 
     public float PlatformRangeMin = 0.2F;
     public float PlatformRange = 0.3F;
-
-    public float ChanceForBrokenPlatform = 0.1F;
+	
+	public float ChanceForBrokenPlatform = 0.1F;
+	public float ChanceForBouncyPlatform = 0.15F;
 
 	public AudioSource JumpSound;
 
@@ -49,19 +52,22 @@ public class PlatformDirector : BaseBehavior
             var screenWidth = ScreenWidth();
             var xPosition = (screenWidth * Random.value) - (screenWidth / 2);
 
-            var platform = (Transform)Instantiate(Platform, new Vector3(xPosition, _lastHeight, transform.position.z), Quaternion.identity);
+			Transform platform;
+			
+			if (Random.value < ChanceForBrokenPlatform)
+			{
+				platform = (Transform)Instantiate(BrokenPlatform, new Vector3(xPosition, _lastHeight, transform.position.z), Quaternion.identity);
+			}
+			else if (Random.value < ChanceForBouncyPlatform)
+			{
+				platform = (Transform)Instantiate(BouncyPlatform, new Vector3(xPosition, _lastHeight, transform.position.z), Quaternion.identity);
+			}
+			else
+			{
+	            platform = (Transform)Instantiate(Platform, new Vector3(xPosition, _lastHeight, transform.position.z), Quaternion.identity);
+			}
 
-            platform.parent = transform;
-
-            if (Random.value < ChanceForBrokenPlatform)
-            {
-				var platformComponent = platform.GetComponent<Platform>();
-
-				if (platformComponent)
-				{
-                	platform.GetComponent<Platform>().IsBroken = true;
-				}
-            }
+			platform.parent = transform;
         }
     }
 }
