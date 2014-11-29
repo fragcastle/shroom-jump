@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class Hud : BaseBehavior
@@ -10,11 +11,16 @@ public class Hud : BaseBehavior
 	private string _playAgainText = "";
 	private string _newHighScoreText = "New High Score!";
 
-	public Texture2D PauseButtonImage;
+	private Text _text;
+	
+	public GameObject TextGameObject;
+	public GameObject RestartGameObject;
 
     void Start()
     {
         _player = GameObject.Find("Player").GetComponent<PlayerController>();
+		
+		_text = TextGameObject.GetComponent<Text>();
 
         _textStyle.normal.textColor = Color.black;
         _textStyle.fontSize = 24;
@@ -33,35 +39,35 @@ public class Hud : BaseBehavior
 
 			return;
 		}
+
+		_text.text = _player.DistanceTraveled.ToString();
     }
 
     void OnGUI()
 	{
 		_textStyle.alignment = TextAnchor.MiddleLeft;
-		GUI.Label(new Rect(10, 10, 100, 20), _player.DistanceTraveled.ToString(), _textStyle);
-
+		
 		if (!_player)
 		{
 			var cameraPosition = Camera.main.WorldToScreenPoint(Camera.main.transform.position);
 			
 			_textStyle.alignment = TextAnchor.MiddleCenter;
 			GUI.Label(new Rect(cameraPosition.x, cameraPosition.y, 20, 20), _playAgainText, _textStyle);
-
+			
 			if (PlayerPrefs.HasKey(Constants.PreviousHighScoreKey) && PlayerPrefs.HasKey(Constants.HighScoreKey))
 			{
 				var oldScore = PlayerPrefs.GetInt(Constants.PreviousHighScoreKey);
 				var score = PlayerPrefs.GetInt(Constants.HighScoreKey);
-
+				
 				if (score > oldScore)
 					GUI.Label(new Rect(cameraPosition.x, cameraPosition.y + 20, 20, 20), _newHighScoreText.ToString(), _textStyle);
 			}
 		}
-
-		_buttonStyle = GUI.skin.label;
-
-		if (GUI.Button(new Rect(Screen.width - 42, 10, 32, 32), PauseButtonImage, _buttonStyle))
-		{
-			Time.timeScale = Time.timeScale == 1 ? 0 : 1;
-		}
     }
+
+	public void Pause()
+	{
+		Debug.Log ("Pause");
+		Time.timeScale = Time.timeScale == 1 ? 0 : 1;
+	}
 }
