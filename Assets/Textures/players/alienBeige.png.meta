@@ -64,16 +64,6 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: alienBeige_1
-      rect:
-        serializedVersion: 2
-        x: 69
-        y: 417
-        width: 66
-        height: 95
-      alignment: 0
-      pivot: {x: .5, y: .5}
-      border: {x: 0, y: 0, z: 0, w: 0}
     - name: alienBeige_3
       rect:
         serializedVersion: 2
@@ -81,16 +71,6 @@ TextureImporter:
         y: 316
         width: 70
         height: 96
-      alignment: 0
-      pivot: {x: .5, y: .5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: alienBeige_4
-      rect:
-        serializedVersion: 2
-        x: 70
-        y: 325
-        width: 66
-        height: 92
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -111,56 +91,6 @@ TextureImporter:
         y: 222
         width: 65
         height: 95
-      alignment: 0
-      pivot: {x: .5, y: .5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: alienBeige_9
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 125
-        width: 68
-        height: 93
-      alignment: 0
-      pivot: {x: .5, y: .5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: alienBeige_10
-      rect:
-        serializedVersion: 2
-        x: 68
-        y: 126
-        width: 65
-        height: 92
-      alignment: 0
-      pivot: {x: .5, y: .5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: alienBeige_11
-      rect:
-        serializedVersion: 2
-        x: 133
-        y: 128
-        width: 67
-        height: 95
-      alignment: 0
-      pivot: {x: .5, y: .5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: alienBeige_13
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 33
-        width: 66
-        height: 92
-      alignment: 0
-      pivot: {x: .5, y: .5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: alienBeige_14
-      rect:
-        serializedVersion: 2
-        x: 67
-        y: 53
-        width: 68
-        height: 72
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}

@@ -6,7 +6,6 @@ public class Hud : BaseBehavior
 {
 	private PlayerController _player;
 	private GUIStyle _textStyle = new GUIStyle();
-	private GUIStyle _buttonStyle = new GUIStyle();
 
 	private string _playAgainText = "";
 	private string _newHighScoreText = "New High Score!";
@@ -67,7 +66,6 @@ public class Hud : BaseBehavior
 
 	public void Pause()
 	{
-		Debug.Log ("Pause");
 		Time.timeScale = Time.timeScale == 1 ? 0 : 1;
 	}
 }

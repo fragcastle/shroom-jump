@@ -1,7 +1,10 @@
 fileFormatVersion: 2
 guid: 896e122d888f4400db5b8ae207bb6b96
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: alienYellow_0
+    21300002: alienYellow_1
+    21300004: alienYellow_2
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -42,6 +45,36 @@ TextureImporter:
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: alienYellow_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 426
+        width: 69
+        height: 86
+      alignment: 9
+      pivot: {x: .5, y: .649999976}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: alienYellow_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 255
+        width: 68
+        height: 84
+      alignment: 9
+      pivot: {x: .5, y: .649999976}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: alienYellow_2
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 90
+        width: 67
+        height: 83
+      alignment: 9
+      pivot: {x: .5, y: .649999976}
+      border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 

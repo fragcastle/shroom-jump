@@ -5,7 +5,7 @@ public class PressSpaceToStart : BaseBehavior
 {
 	void Start ()
 	{
-		guiText.text = IsMobile() ? "Tap to play" : "Press space to play";
+
 	}
 
 	void Update ()

@@ -4,15 +4,42 @@ using System.Collections;
 public class PlayerController : BaseBehavior
 {
     private Animator _animator;
-    private float _moveThreshold = 0F;
+	private float _moveThreshold = 0F;
+	
+	private PlayerType _playerType;
 	
 	public float DistanceScale = 100;
 	public int DistanceTraveled = 0;
-    public int MoveForce = 10;
+	public int MoveForce = 10;
+	
+	public PlayerType PlayerType
+	{
+		get
+		{
+			return _playerType;
+		}
+		set
+		{
+			_playerType = value;
+		}
+	}
 
     void Start()
     {
         _animator = GetComponent<Animator>();
+
+		var playerSelection = GameObject.Find("PlayerSelection").GetComponent<PlayerSelection>();
+
+		DestroyImmediate(_animator);
+
+		_animator = gameObject.AddComponent<Animator>();
+
+		var playerType = playerSelection.PlayerType.ToString();
+		var resource = Resources.Load("Animations/" + playerType + "Player/Player");
+		var newAnimationController = (RuntimeAnimatorController)RuntimeAnimatorController.Instantiate(resource);
+		_animator.runtimeAnimatorController = newAnimationController;
+
+		playerSelection.enabled = false;
     }
 
     void Update()
