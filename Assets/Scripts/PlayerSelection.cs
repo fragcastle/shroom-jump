@@ -44,31 +44,43 @@ public class PlayerSelection : MonoBehaviour
 		{
 			if (axisInput > 0)
 			{
-				_playerTypeIndex++;
+				ChangePlayer(true);
 			}
 			else if (axisInput < 0)
 			{
-				_playerTypeIndex--;
-			}
-
-			if (_playerTypeIndex >= _playerTypes.Count)
-			{
-				_playerTypeIndex = 0;
-			}
-			else if (_playerTypeIndex < 0)
-			{
-				_playerTypeIndex = _playerTypes.Count - 1;
-			}
-
-			var resource = Resources.Load("Animations/" + PlayerType + "Player/Player");
-			var newAnimationController = (RuntimeAnimatorController)RuntimeAnimatorController.Instantiate(resource);
-			_playerAnimator.runtimeAnimatorController = newAnimationController;
-		}
+				ChangePlayer(false);
+            }
+        }
 
 		_previousAxisInput = Input.GetAxis("Horizontal");
 	}
 
-//	public Animator GetPlayerTypeAnimator()
+	public void ChangePlayer(bool forward)
+	{
+		if (forward)
+		{
+			_playerTypeIndex++;
+		}
+		else
+		{
+			_playerTypeIndex--;
+		}
+		
+		if (_playerTypeIndex >= _playerTypes.Count)
+		{
+			_playerTypeIndex = 0;
+		}
+		else if (_playerTypeIndex < 0)
+		{
+			_playerTypeIndex = _playerTypes.Count - 1;
+		}
+		
+		var resource = Resources.Load("Animations/" + PlayerType + "Player/Player");
+		var newAnimationController = (RuntimeAnimatorController)RuntimeAnimatorController.Instantiate(resource);
+        _playerAnimator.runtimeAnimatorController = newAnimationController;
+    }
+    
+    //	public Animator GetPlayerTypeAnimator()
 //	{
 //		if (PlayerType == PlayerType.Blue)
 //		{
