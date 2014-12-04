@@ -5,10 +5,8 @@ using System.Collections.Generic;
 public class PlayerSelection : MonoBehaviour
 {
     private float _previousAxisInput = 0;
-
     private GameObject _player;
     private Animator _playerAnimator;
-
     public int _playerTypeIndex = 0;
     public List<PlayerType> _playerTypes = new List<PlayerType>();
 
@@ -16,7 +14,7 @@ public class PlayerSelection : MonoBehaviour
     {
         get
         {
-            return _playerTypes[_playerTypeIndex];
+            return _playerTypes [_playerTypeIndex];
         }
     }
 
@@ -32,22 +30,28 @@ public class PlayerSelection : MonoBehaviour
 
         _player = GameObject.Find("Player");
         _playerAnimator = _player.GetComponent<Animator>();
-
+        
         if (PlayerPrefs.HasKey(Constants.PlayerTypeKey))
         {
             var playerType = PlayerPrefs.GetString(Constants.PlayerTypeKey);
-
+            
             for (int i = 0; i < _playerTypes.Count; i++)
-			{
-                if (playerType == _playerTypes[i].ToString())
+            {
+                if (playerType == _playerTypes [i].ToString())
                 {
                     _playerTypeIndex = i;
+                    
+                    UpdateAnimator();
+                    
                     break;
                 }
             }
-
-            UpdateAnimator();
         }
+    }
+
+    void Awake()
+    {
+        Application.targetFrameRate = 300;
     }
 
     void Update()
@@ -96,21 +100,14 @@ public class PlayerSelection : MonoBehaviour
 
     private void UpdateAnimator()
     {
-        var resource = Resources.Load("Animations/" + PlayerType + "Player/Player");
-        var newAnimationController = (RuntimeAnimatorController)RuntimeAnimatorController.Instantiate(resource);
-        _playerAnimator.runtimeAnimatorController = newAnimationController;
-
+        _playerAnimator.runtimeAnimatorController = GetRuntimeAnimatorController();
     }
 
-    //	public Animator GetPlayerTypeAnimator()
-    //	{
-    //		if (PlayerType == PlayerType.Blue)
-    //		{
-    //			return 
-    //		}
-    //		else if (PlayerType == PlayerType.Beige)
-    //		{
-    //			PlayerType = PlayerType.Blue;
-    //		}
-    //	}
+    public RuntimeAnimatorController GetRuntimeAnimatorController()
+    {
+        var resource = Resources.Load("Animations/" + PlayerType + "Player/Player");
+        var newAnimationController = (RuntimeAnimatorController)RuntimeAnimatorController.Instantiate(resource);
+        
+        return newAnimationController;
+    }
 }
