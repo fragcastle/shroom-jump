@@ -28,18 +28,18 @@ public class PlayerController : BaseBehavior
     {
         _animator = GetComponent<Animator>();
 
-		var playerSelection = GameObject.Find("PlayerSelection").GetComponent<PlayerSelection>();
+        if (PlayerPrefs.HasKey(Constants.PlayerTypeKey))
+        {
+            var playerType = PlayerPrefs.GetString(Constants.PlayerTypeKey);
 
-		DestroyImmediate(_animator);
+            DestroyImmediate(_animator);
 
-		_animator = gameObject.AddComponent<Animator>();
+            _animator = gameObject.AddComponent<Animator>();
 
-		var playerType = playerSelection.PlayerType.ToString();
-		var resource = Resources.Load("Animations/" + playerType + "Player/Player");
-		var newAnimationController = (RuntimeAnimatorController)RuntimeAnimatorController.Instantiate(resource);
-		_animator.runtimeAnimatorController = newAnimationController;
-
-		playerSelection.enabled = false;
+            var resource = Resources.Load("Animations/" + playerType + "Player/Player");
+            var newAnimationController = (RuntimeAnimatorController)RuntimeAnimatorController.Instantiate(resource);
+            _animator.runtimeAnimatorController = newAnimationController;
+        }
     }
 
     void Update()
