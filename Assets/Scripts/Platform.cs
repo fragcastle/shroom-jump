@@ -33,11 +33,11 @@ public class Platform : BaseBehavior
         }
     }
 
-    void OnCollisionEnter2D(Collision2D collision2D)
+    void OnTriggerEnter2D(Collider2D collision2D)
     {
-        if (collision2D.rigidbody.velocity.y <= 0)
+        if (collision2D.rigidbody2D.velocity.y <= 0)
         {
-            collision2D.rigidbody.velocity = new Vector2(collision2D.rigidbody.velocity.x, JumpSpeed);
+            collision2D.rigidbody2D.velocity = new Vector2(collision2D.rigidbody2D.velocity.x, JumpSpeed);
 
             collider2D.enabled = false;
 
@@ -51,11 +51,11 @@ public class Platform : BaseBehavior
         }
     }
 
-    void OnCollisionStay2D(Collision2D collision2D)
+    void OnTriggerStay2D(Collider2D collision2D)
     {
-        if (collision2D.rigidbody.velocity.y <= 0)
+        if (collision2D.rigidbody2D.velocity.y <= 0)
         {
-            collision2D.rigidbody.velocity = new Vector2(collision2D.rigidbody.velocity.x, JumpSpeed);
+            collision2D.rigidbody2D.velocity = new Vector2(collision2D.rigidbody2D.velocity.x, JumpSpeed);
 
             collider2D.enabled = false;
 			
