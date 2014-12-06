@@ -72,7 +72,6 @@ public class Hud : BaseBehavior
         var paused = Time.timeScale == 0;
         
         PauseUi.SetActive(paused);
-        EndGameUi.SetActive(paused);
 	}
 	
 	public void HomeScreen()
