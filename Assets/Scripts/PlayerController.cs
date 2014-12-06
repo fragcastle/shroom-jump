@@ -4,6 +4,8 @@ using System.Collections;
 public class PlayerController : BaseBehavior
 {
     private Animator _animator;
+    private ParticleSystem _particleSystem;
+    
 	private float _moveThreshold = 0F;
 	
 	private PlayerType _playerType;
@@ -27,6 +29,7 @@ public class PlayerController : BaseBehavior
     void Start()
     {
         _animator = GetComponent<Animator>();
+        _particleSystem = GameObject.Find("ParticleSystem").particleSystem;
 
         if (PlayerPrefs.HasKey(Constants.PlayerTypeKey))
         {
@@ -77,6 +80,8 @@ public class PlayerController : BaseBehavior
         {
             transform.localScale = new Vector3(1, 1, 1);
         }
+        
+        _particleSystem.enableEmission = rigidbody2D.velocity.y > 0;
     }
 
     void FixedUpdate()
