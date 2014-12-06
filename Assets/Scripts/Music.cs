@@ -19,6 +19,10 @@ public class Music : MonoBehaviour
             var toggle = gameObject.GetComponent<Toggle>();
             toggle.isOn = musicEnabled;
         }
+        else
+        {
+            audio.Play();
+        }
     }
 
     public void ToggleMusic(bool enabled)
