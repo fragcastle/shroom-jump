@@ -11,8 +11,9 @@ public class PlayerController : BaseBehavior
 	private PlayerType _playerType;
 	
 	public float DistanceScale = 100;
-	public int DistanceTraveled = 0;
-	public int MoveForce = 10;
+    public int DistanceTraveled = 0;
+    public int MoveForce = 10;
+    public int MaxXSpeed = 10;
 	
 	public PlayerType PlayerType
 	{
@@ -100,6 +101,11 @@ public class PlayerController : BaseBehavior
             {
                 rigidbody2D.AddForce(new Vector2(xInput * MoveForce * Time.deltaTime * 10, 0));
             }
+        }
+        
+        if (Mathf.Abs(rigidbody2D.velocity.x) > MaxXSpeed)
+        {
+            rigidbody2D.velocity = new Vector2(Mathf.Clamp(rigidbody2D.velocity.x, -MaxXSpeed, MaxXSpeed), rigidbody2D.velocity.y);
         }
 
         var screenWidth = ScreenWidth();
