@@ -52,6 +52,7 @@ public class PlayerSelection : MonoBehaviour
     void Awake()
     {
         Application.targetFrameRate = 300;
+        Screen.sleepTimeout = SleepTimeout.NeverSleep;
     }
 
     void Update()
