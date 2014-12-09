@@ -91,4 +91,9 @@ public class BaseBehavior : MonoBehaviour
 			|| Application.platform == RuntimePlatform.IPhonePlayer
 			|| Application.platform == RuntimePlatform.WP8Player;
 	}
+    
+    public int RandomIndex(int arrayLength)
+    {
+        return Mathf.FloorToInt(UnityEngine.Random.value * (arrayLength - 1));
+    }
 }

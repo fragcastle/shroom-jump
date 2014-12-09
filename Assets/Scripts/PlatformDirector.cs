@@ -9,14 +9,17 @@ public class PlatformDirector : BaseBehavior
     private float _distanceToGenerate = 5;
 	
 	public Transform Platform;
-	public Transform BrokenPlatform;
-	public Transform BouncyPlatform;
+    public Transform BrokenPlatform;
+    public Transform BouncyPlatform;
+    public Transform DeadPlatform;
 
-    public float PlatformRangeMin = 0.2F;
-    public float PlatformRange = 0.3F;
-	
-	public float ChanceForBrokenPlatform = 0.1F;
-	public float ChanceForBouncyPlatform = 0.15F;
+    public float PlatformRangeMin = 0.25F;
+    public float PlatformRange = 0.35F;
+    
+    public float ChanceForBrokenPlatform = 0.1F;
+    public float ChanceForBouncyPlatform = 0.15F;
+    
+    public float ChanceForDeadPlatform = 0.01F;
 
 	public AudioSource JumpSound;
 

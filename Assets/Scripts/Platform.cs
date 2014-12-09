@@ -4,8 +4,9 @@ using System.Collections;
 public class Platform : BaseBehavior
 {
     private Transform _player;
-
+    
     public bool IsBroken = false;
+    public bool IsDead = false;
     public float JumpSpeed = 3.5F;
 
     void Start()
@@ -37,16 +38,23 @@ public class Platform : BaseBehavior
     {
         if (collision2D.rigidbody2D.velocity.y <= 0)
         {
-            collision2D.rigidbody2D.velocity = new Vector2(collision2D.rigidbody2D.velocity.x, JumpSpeed);
-
-            collider2D.enabled = false;
-
-			if (PlatformDirector.Current)
-				PlatformDirector.Current.audio.Play();
-
-            if (IsBroken)
+            if (IsDead)
             {
                 Destroy(gameObject);
+            }
+            else
+            {
+                collision2D.rigidbody2D.velocity = new Vector2(collision2D.rigidbody2D.velocity.x, JumpSpeed);
+    
+                collider2D.enabled = false;
+    
+    			if (PlatformDirector.Current)
+    				PlatformDirector.Current.audio.Play();
+    
+                if (IsBroken)
+                {
+                    Destroy(gameObject);
+                }
             }
         }
     }
@@ -55,15 +63,22 @@ public class Platform : BaseBehavior
     {
         if (collision2D.rigidbody2D.velocity.y <= 0)
         {
-            collision2D.rigidbody2D.velocity = new Vector2(collision2D.rigidbody2D.velocity.x, JumpSpeed);
-
-            collider2D.enabled = false;
-			
-			PlatformDirector.Current.audio.Play();
-
-            if (IsBroken)
+            if (IsDead)
             {
                 Destroy(gameObject);
+            }
+            else
+            {
+                collision2D.rigidbody2D.velocity = new Vector2(collision2D.rigidbody2D.velocity.x, JumpSpeed);
+    
+                collider2D.enabled = false;
+    			
+    			PlatformDirector.Current.audio.Play();
+    
+                if (IsBroken)
+                {
+                    Destroy(gameObject);
+                }
             }
         }
     }
