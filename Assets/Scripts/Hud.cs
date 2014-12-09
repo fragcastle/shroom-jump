@@ -12,7 +12,7 @@ public class Hud : BaseBehavior
 	
 	public GameObject TextGameObject;
     public GameObject EndGameUi;
-    public GameObject HighScoreGo;
+    public GameObject HighScoreGameObject;
     public GameObject PauseUi;
 
     void Start()
@@ -21,7 +21,7 @@ public class Hud : BaseBehavior
         _platforms = GameObject.Find("Platforms");
         
 		EndGameUi.SetActive(false);
-        HighScoreGo.SetActive(false);
+        HighScoreGameObject.SetActive(false);
         
 		_text = TextGameObject.GetComponent<Text>();
 
@@ -55,8 +55,7 @@ public class Hud : BaseBehavior
 				var oldScore = PlayerPrefs.GetInt(Constants.PreviousHighScoreKey);
 				var score = PlayerPrefs.GetInt(Constants.HighScoreKey);
 				
-				if (score > oldScore)
-					HighScoreGo.SetActive(true);
+                HighScoreGameObject.SetActive(score > oldScore);
 			}
 
 			return;
